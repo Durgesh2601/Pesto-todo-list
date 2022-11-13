@@ -56,6 +56,9 @@ export const Todo = () => {
   const [value, setValue] = useState("");
   const [todoList, setTodoList] = useState(deafultTodo);
   const addTodo = () => {
+    if(value === '') {
+      return window.alert(`Todo title can't be empty!`);
+    }
     const newItem = {
       id: todoList?.length + 1,
       title: value,
